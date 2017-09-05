@@ -1,0 +1,49 @@
+<?php
+/** @var $block \Talos\CrossSellPage\Block\View */
+
+$options = $block->getProductOptions();
+$crossSellProducts = $block->getCrossSellProducts();
+?>
+<section class="cross-sellpage-tour-wp">
+    <p>Display content here</p>
+    <a id="click-here" href="#">Click here to update</a>
+
+    <form action="" id="#cross-sell-options">
+        <?php foreach($options as $option) : ?>
+            <?php foreach($option->getValues() as $value): ?>
+                <span>
+                    <input type="radio" class="cross-sell-option"
+                             name="product-option" value="<?php echo $value->getOptionTypeId(); ?>"
+                             parent-id="<?php echo $option->getId(); ?>">
+                    <?php echo $value->getTitle(); ?>
+                </span>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+        <div class="cross-sell-products">
+            <fieldset>
+                <legend>These might interest you</legend>
+                <div class="cross-sell-item">
+                    <?php foreach ($crossSellProducts as $crossSellProduct) : ?>
+                        <img src="<?php echo $block->getUrl('pub/media/catalog').'product'.$crossSellProduct->getThumbnail(); ?>" alt="Product image">
+                        <input type="checkbox" name="animal" value="<p><?php echo $crossSellProduct->getId(); ?></p>" />
+                        <p><?php echo $crossSellProduct->getName(); ?></p>
+                        <p><?php echo (int) $crossSellProduct->getPrice(); ?></p>
+                    <?php endforeach; ?>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </form>
+
+</section>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "crossSellCart": {
+                "productId" : <?php echo $block->getProductId(); ?>
+            }
+        }
+    }
+</script>
