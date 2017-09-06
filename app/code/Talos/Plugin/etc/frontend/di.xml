@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Block\Html\Footer">
+        <plugin name="Talos_CustomFooter" type="Talos\Plugin\Plugin\FooterPlugin" />
+    </type>
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="Talos_CustomBreadcrumbs" type="Talos\Plugin\Plugin\CrumbPlugin" />
+    </type>
+</config>
