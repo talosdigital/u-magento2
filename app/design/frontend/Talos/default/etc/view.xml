@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 <view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+
     <media/>
+
+    <exclude>
+        <item type="file">Magento_Theme::js/imagerotator.js</item>
+    </exclude>
+
 </view>
