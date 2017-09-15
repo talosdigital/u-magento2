@@ -3,7 +3,7 @@ var config = {
         '*': {
             myScript: 'js/my-script',
             imagerotator: 'Magento_Theme/js/imagerotator',
-            jwplayer: 'Talos_Minify/js/jw/jwplayer'
+            jwplayer: 'js/jwplayer.min'
         }
     }
 };

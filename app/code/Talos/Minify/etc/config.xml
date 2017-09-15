@@ -4,7 +4,7 @@
         <dev>
             <js>
                 <minify_exclude>
-                    jw/jwplayer.js
+                   jwplayer
                 </minify_exclude>
             </js>
         </dev>
